@@ -15,10 +15,10 @@ public class URI1012 {
         double D = b * b;
         double E = a * b;
 
-        System.out.printf("TRIANGULO: %.3f%n ", A);
-        System.out.printf("CIRCULO: %.3f%n ", B);
-        System.out.printf("TRAPEZIO: %.3f%n ", C);
-        System.out.printf("QUADRADO: %.3f%n ", D);
-        System.out.printf("RETANGULO: %.3f%n ", E);
+        System.out.printf("TRIANGULO: %.3f%n", A);
+        System.out.printf("CIRCULO: %.3f%n", B);
+        System.out.printf("TRAPEZIO: %.3f%n", C);
+        System.out.printf("QUADRADO: %.3f%n", D);
+        System.out.printf("RETANGULO: %.3f%n", E);
     }
 }
