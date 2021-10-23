@@ -9,6 +9,6 @@ public class URI1014 {
 
         double average = a / b;
 
-        System.out.printf("%.3f km/l" , average);
+        System.out.printf("%.3f km/l%n", average);
     }
 }
