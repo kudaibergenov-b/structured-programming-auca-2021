@@ -12,6 +12,7 @@ public class Problem02 {
             System.out.println("You should take \"Object-Oriented Programming\" in the next semester");
         } else {
             System.out.println("You failed \"Structured Programming\"!!!");
+            System.out.println("You can take it again in the fall semester next year.");
         }
     }
 }
