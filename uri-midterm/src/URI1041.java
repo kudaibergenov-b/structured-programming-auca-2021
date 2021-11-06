@@ -26,7 +26,7 @@ public class URI1041 {
             System.out.println("Eixo Y");
         }
         if (y == 0 && x > 0 || y == 0 && x < 0) {
-            System.out.println("Eixo Y");
+            System.out.println("Eixo X");
         }
     }
 }
