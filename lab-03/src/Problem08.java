@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Problem08 {
     public static void main(String[] args) {
@@ -8,27 +8,23 @@ public class Problem08 {
         int b = inp.nextInt();
         int c = inp.nextInt();
 
-        int first = a;
-        int second = b;
-        int third = c;
+        // Bubble Sort
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
+        if (b > c) {
+            int t = b;
+            b = c;
+            c = t;
+        }
+        if (a > b) {
+            int t = a;
+            a = b;
+            b = t;
+        }
 
-        if (b < a && b < c) {
-            first = b;
-        }
-        if (c < a && c < b) {
-            first = c;
-        }
-        if (a > b && a < c || a < b && a > c) {
-            second = a;
-        }
-        if (c < a && c > b || c > a && c < b) {
-            second = c;
-        }
-        if (a > c && a > b) {
-            third = a;
-        }
-        if (b > c && b > a)
-            third = b;
-        System.out.println(first + ", " + second + ", " + third);
+        System.out.printf("%d, %d, %d%n", a, b, c);
     }
 }
