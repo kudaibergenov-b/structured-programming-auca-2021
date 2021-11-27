@@ -36,8 +36,11 @@ public class URI1094 {
         System.out.println("Total de coelhos: " + cTotal);
         System.out.println("Total de ratos: " + rTotal);
         System.out.println("Total de sapos: " + sTotal);
-        System.out.printf("Percentual de coelhos: %.2f%n", cTotalPercent);
-        System.out.printf("Percentual de ratos: %.2f%n", rTotalPercent);
-        System.out.printf("Percentual de sapos: %.2f%n", sTotalPercent);
+        System.out.printf("Percentual de coelhos: %.2f", cTotalPercent);
+        System.out.print(" %\n");
+        System.out.printf("Percentual de ratos: %.2f", rTotalPercent);
+        System.out.print(" %\n");
+        System.out.printf("Percentual de sapos: %.2f", sTotalPercent);
+        System.out.print(" %\n");
     }
 }
