@@ -28,10 +28,11 @@ public class Problem01 extends PApplet {
             messageSize += 1;
         }
 
+
+
     }
 
     public static void main(String[] args) {
         PApplet.main("Problem01");
     }
-
 }
