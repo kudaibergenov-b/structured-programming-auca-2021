@@ -45,7 +45,8 @@ public class Problem01 extends PApplet {
                 DELTA = -1;
             } else if (messageSize < MIN_SIZE) {
                 DELTA = 1;
-
+            } else if (messageSize == MIN_SIZE && DELTA == -1) {
+                period += 1;
             }
         }
         if (period == 3) {
@@ -60,9 +61,6 @@ public class Problem01 extends PApplet {
                 DELTA = 1;
             }
         }
-
-
-
 
         messageSize += DELTA;
     }
