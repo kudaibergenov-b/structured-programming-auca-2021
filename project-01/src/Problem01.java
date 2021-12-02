@@ -32,7 +32,8 @@ public class Problem01 extends PApplet {
                 DELTA = -1;
             } else if (messageSize < MIN_SIZE) {
                 DELTA = 1;
-                period += 1;
+                period = 2;
+                messageSize = MIN_SIZE;
             }
         }
         if (period == 2) {
@@ -46,7 +47,9 @@ public class Problem01 extends PApplet {
             } else if (messageSize < MIN_SIZE) {
                 DELTA = 1;
             } else if (messageSize == MIN_SIZE && DELTA == -1) {
-                period += 1;
+                period = 3;
+                messageSize = MIN_SIZE;
+                DELTA = 1;
             }
         }
         if (period == 3) {
@@ -58,6 +61,10 @@ public class Problem01 extends PApplet {
             if (messageSize > MAX_SIZE) {
                 DELTA = -1;
             } else if (messageSize < MIN_SIZE) {
+                DELTA = 1;
+            } else if (messageSize == MIN_SIZE && DELTA == -1) {
+                period = 1;
+                messageSize = MIN_SIZE;
                 DELTA = 1;
             }
         }
