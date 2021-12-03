@@ -16,7 +16,7 @@ public class URI1101 {
                 }
             } else {
                 for (int j = a; j <= b; ++j) {
-                    sum += 1;
+                    sum += j;
                     System.out.print(j + " ");
                 }
             }
