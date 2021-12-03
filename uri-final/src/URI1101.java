@@ -1,13 +1,13 @@
 import java.util.Scanner;
 
-public class URI10101 {
+public class URI1101 {
     public static void main(String[] args) {
         Scanner inp = new Scanner(System.in);
 
         int a;
         int b;
 
-        while ((a = inp.nextInt()) > 0 && (b = inp.nextInt()) > 0) {
+        while (((a = inp.nextInt()) > 0) && ((b = inp.nextInt()) > 0)) {
             int sum = 0;
             if (a > b) {
                 for (int i = b; i <= a; ++i) {
@@ -24,3 +24,4 @@ public class URI10101 {
         }
     }
 }
+
