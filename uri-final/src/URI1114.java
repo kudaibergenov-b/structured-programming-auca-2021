@@ -8,6 +8,5 @@ public class URI1114 {
             System.out.println("Senha Invalida");
             }
         System.out.println("Acesso Permitido");
-        System.exit(1);
     }
 }
