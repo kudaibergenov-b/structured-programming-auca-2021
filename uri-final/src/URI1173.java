@@ -18,7 +18,7 @@ public class URI1173 {
             }
         }
         for (int i = 0; i < n.length; ++i) {
-            System.out.printf("N [%d] = %d%n", i, n[i]);
+            System.out.printf("N[%d] = %d%n", i, n[i]);
         }
     }
 }
