@@ -8,8 +8,12 @@ public class URI1146 {
 
         while ((n = inp.nextInt()) != 0) {
             for (int i = 1; i <= n; ++i) {
-                System.out.print(i);
-                System.out.print(" ");
+                if (i != n) {
+                    System.out.print(i + " ");
+                } else {
+                    System.out.print(i);
+                    System.out.println();
+                }
             }
         }
     }
