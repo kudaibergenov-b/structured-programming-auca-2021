@@ -19,7 +19,11 @@ public class URI1151 {
                 first = second;
                 second = number;
             }
+            if (i < n - 1)
             System.out.print(number + " ");
+            else {
+                System.out.print(number);
+            }
         }
     }
 }
