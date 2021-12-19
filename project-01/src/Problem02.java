@@ -9,6 +9,10 @@ public class Problem02 extends PApplet {
     float circleTwoPosY;
     float circleThreePosX;
     float circleThreePosY;
+    float dCircleTwoPosX;
+    float dCircleTwoPosY;
+    float dCircleThreePosX;
+    float dCircleThreePosY;
 
     public void settings() {
         fullScreen();
@@ -22,6 +26,12 @@ public class Problem02 extends PApplet {
         dy = random(-8, 8);
         circleTwoPosX = x - 35;
         circleTwoPosY = y + 35;
+        dCircleTwoPosX = dx;
+        dCircleTwoPosY = dy;
+        circleThreePosX = x + 35;
+        circleThreePosY = y - 35;
+        dCircleThreePosX = dx;
+        dCircleThreePosY = dy;
     }
 
     public void draw() {
@@ -53,24 +63,47 @@ public class Problem02 extends PApplet {
         fill(255, 0, 0);
         circle(circleTwoPosX, circleTwoPosY, 50);
 
-        circleTwoPosX += dx;
-        circleTwoPosY += dy;
+        circleTwoPosX += dCircleTwoPosX;
+        circleTwoPosY += dCircleTwoPosY;
 
         if (circleTwoPosX >= width) {
             circleTwoPosX = width;
-            dx = -dx;
+            dCircleTwoPosX = -dCircleTwoPosX;
         }
         if (circleTwoPosX <= 0) {
             circleTwoPosX = 0;
-            dx = -dx;
+            dCircleTwoPosX = -dCircleTwoPosX;
         }
         if (circleTwoPosY >= height) {
             circleTwoPosY = height;
-            dy = -dy;
+            dCircleTwoPosY = -dCircleTwoPosY;
         }
         if (circleTwoPosY <= 0) {
             circleTwoPosY = 0;
-            dy = -dy;
+            dCircleTwoPosY = -dCircleTwoPosY;
+        }
+
+        fill(0,255,0);
+        circle(circleThreePosX, circleThreePosY, 50);
+
+        circleThreePosX += dCircleThreePosX;
+        circleThreePosY += dCircleThreePosY;
+
+        if (circleThreePosX >= width) {
+            circleThreePosX = width;
+            dCircleThreePosX = -dCircleThreePosX;
+        }
+        if (circleThreePosX <= 0) {
+            circleThreePosX = 0;
+            dCircleThreePosX = -dCircleThreePosX;
+        }
+        if (circleThreePosY >= height) {
+            circleThreePosY = height;
+            dCircleThreePosY = -dCircleThreePosY;
+        }
+        if (circleThreePosY <= 0) {
+            circleThreePosY = 0;
+            dCircleThreePosY = -dCircleThreePosY;
         }
     }
 
