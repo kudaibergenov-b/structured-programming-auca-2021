@@ -6,9 +6,8 @@ public class Problem05 extends PApplet {
     float size;
     float x;
     float y;
-    float rectWidth = 10;
-    float rectHeight = 10;
-    int period = 1;
+    float squareSize;
+    int period;
 
     public void settings() {
         fullScreen();
@@ -28,28 +27,31 @@ public class Problem05 extends PApplet {
         }
         x = width / size;
         y = height / size;
+        squareSize = height / size;
     }
 
     public void draw() {
         background(0, 0, 0);
 
-        for (int i = 1; i <= size; ++i) {
-            for (int j = 1; j <= size; ++j) {
+        for (int i = 1; i <= size * size; ++i) {
                 if (period % 2 != 0) {
                     fill(255, 255, 255);
                 } else {
                     fill(0, 20, 20);
                 }
-                rect(x, y, rectWidth, rectHeight);
 
+                square(x, y, squareSize);
                 period += 1;
-                x += rectWidth;
-                if (period % 8 == 0) {
 
+                x += squareSize;
+
+                if (period % size == 0) {
+                    y += squareSize / 2;
+                    x *= -1;
                 }
-            }
-            noLoop();
+
         }
+        noLoop();
     }
 
     public static void main(String[] args) {
