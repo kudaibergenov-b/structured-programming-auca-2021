@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Problem04 {
-    static final int NUM_SHUFFLE_MOVES = 3;
+    static final int NUM_SHUFFLE_MOVES = 5;
     static Random rnd = new Random();
     static int [][] gameBoard = new int[4][4];
     static int emptyRow;
@@ -58,9 +58,9 @@ public class Problem04 {
         for (int row = 0; row < 4; ++row) {
             for (int col = 0; col < 4; ++col) {
                 if (gameBoard [row][col] != 16) {
-                    System.out.printf("%3d", gameBoard[0][col]);
+                    System.out.printf("%3d", gameBoard[row][col]);
                 } else {
-                    System.out.println("   ");
+                    System.out.print("   ");
                 }
             }
             System.out.println();

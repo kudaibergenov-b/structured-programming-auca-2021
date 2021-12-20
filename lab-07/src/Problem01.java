@@ -18,7 +18,7 @@ public class Problem01 {
         }
 
         for (int i = 0, sum = 2; i < counters.length; ++i, ++sum) {
-            System.out.printf("%.2d: %d%n", sum, counters[i]);
+            System.out.printf("%2d: %d%n", sum, counters[i]);
         }
     }
 }
