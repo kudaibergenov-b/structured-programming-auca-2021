@@ -13,6 +13,8 @@ public class Problem02 extends PApplet {
     float dCircleTwoPosY;
     float dCircleThreePosX;
     float dCircleThreePosY;
+    float circleSize;
+    float circleRadius;
 
     public void settings() {
         fullScreen();
@@ -22,14 +24,16 @@ public class Problem02 extends PApplet {
     public void setup() {
         x = width / 2f;
         y = height / 2f;
+        circleSize = 70;
+        circleRadius = circleSize / 2f;
         dx = random(-10, 10);
         dy = random(-8, 8);
-        circleTwoPosX = x - 35;
-        circleTwoPosY = y + 35;
+        circleTwoPosX = x + (dx * 50 / abs(dx));
+        circleTwoPosY = y + (dy * 50 / abs(dy));
         dCircleTwoPosX = dx;
         dCircleTwoPosY = dy;
-        circleThreePosX = x + 35;
-        circleThreePosY = y - 35;
+        circleThreePosX = x + (-dx * 50 / abs(dx));
+        circleThreePosY = y + (-dy * 50 / abs(dy));
         dCircleThreePosX = dx;
         dCircleThreePosY = dy;
     }
@@ -38,7 +42,7 @@ public class Problem02 extends PApplet {
         background(0, 0, 0);
 
         fill(0, 0, 255);
-        circle(x, y, 50 );
+        circle(x, y, circleSize);
 
         x += dx;
         y += dy;
@@ -61,7 +65,7 @@ public class Problem02 extends PApplet {
         }
 
         fill(255, 0, 0);
-        circle(circleTwoPosX, circleTwoPosY, 50);
+        circle(circleTwoPosX, circleTwoPosY, circleSize);
 
         circleTwoPosX += dCircleTwoPosX;
         circleTwoPosY += dCircleTwoPosY;
@@ -84,7 +88,7 @@ public class Problem02 extends PApplet {
         }
 
         fill(0,255,0);
-        circle(circleThreePosX, circleThreePosY, 50);
+        circle(circleThreePosX, circleThreePosY, circleSize);
 
         circleThreePosX += dCircleThreePosX;
         circleThreePosY += dCircleThreePosY;
