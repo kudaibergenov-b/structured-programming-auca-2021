@@ -10,6 +10,8 @@ public class Problem04 extends PApplet {
     float horizontalY;
     float verticalX;
     float verticalY;
+    int rndX = (int) random(1,19);
+    int rndY = (int) random(1,14);
 
     public void settings() {
         fullScreen();
@@ -23,8 +25,8 @@ public class Problem04 extends PApplet {
         circleY = horizontalY + (circleR / 2);
         verticalX = horizontalX;
         verticalY = horizontalY;
-        circleX2 = (int) random(circleX, circleX + circleR * 5);
-        circleY2 = (int) random(circleY, circleY);
+        circleX2 = circleX + circleR * rndX;
+        circleY2 = circleY + circleR * rndY;
         frameRate(10);
     }
 
@@ -35,22 +37,18 @@ public class Problem04 extends PApplet {
 
         for (int i = 0, h = height / 8; i < 16; ++i, h += circleR) {
             stroke(0,0,255);
-            strokeWeight(2);
-            line(horizontalX, h, horizontalX + circleR * 21, h);
+            strokeWeight(1);
+            line(horizontalX, h,horizontalX + circleR * 20, h);
         }
-        for (int j = 0, v = width / 5; j < 21; ++j, v += circleR * 1.067) {
+        for (int j = 0, v = width / 5; j < 21; ++j, v += circleR) {
             stroke(0,0,255);
-            strokeWeight(2);
-            line(v, verticalY, v, height - verticalY);
+            strokeWeight(1);
+            line(v, verticalY, v, verticalY + circleR * 15);
         }
 
         noStroke();
         fill(255, 0, 0);
         circle(circleX, circleY, circleR);
-
-        noStroke();
-        fill(255, 255, 0);
-        circle(circleX2, circleY2, circleR);
 
         if (key == CODED) {
             switch (keyCode) {
@@ -62,12 +60,28 @@ public class Problem04 extends PApplet {
                     break;
                 case LEFT:
                     circleX -= circleR;
+                    if (circleX == horizontalX + (circleR / 2)) {
+                        circleX += circleR;
+                    }
                     break;
                 case RIGHT:
                     circleX += circleR;
+                    if (circleX == 20 * (horizontalX + (circleR / 2))) {
+                        circleX -= circleR;
+                    }
                     break;
             }
         }
+
+        //if (circleY == circleY || circleY == circleY + circleR * 15) {
+          //  circleY += 0;
+        //}
+
+        noStroke();
+        fill(255, 255, 0);
+        circle(circleX2, circleY2, circleR);
+
+
     }
 
     public static void main(String[] args) {
