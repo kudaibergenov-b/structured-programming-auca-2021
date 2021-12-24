@@ -12,12 +12,14 @@ public class Problem04 extends PApplet {
     float verticalY;
     int rndX = (int) random(1,19);
     int rndY = (int) random(1,14);
+    int score;
 
     public void settings() {
         fullScreen();
     }
 
     public void setup() {
+        textSize(30);
         circleR = height / 20f;
         horizontalX = width / 5f;
         horizontalY = height / 8f;
@@ -25,9 +27,10 @@ public class Problem04 extends PApplet {
         circleY = horizontalY + (circleR / 2);
         verticalX = horizontalX;
         verticalY = horizontalY;
-        circleX2 = circleX + circleR * rndX;
-        circleY2 = circleY + circleR * rndY;
-        frameRate(10);
+        circleX2 = circleX + circleR * (int) random(1,19);;
+        circleY2 = circleY + circleR * (int) random(1,14);
+        score = 0;
+        frameRate(15);
     }
 
     public void draw() {
@@ -49,6 +52,10 @@ public class Problem04 extends PApplet {
         noStroke();
         fill(255, 0, 0);
         circle(circleX, circleY, circleR);
+
+        noStroke();
+        fill(255, 255, 0);
+        circle(circleX2, circleY2, circleR);
 
         if (key == CODED) {
             switch (keyCode) {
@@ -77,22 +84,21 @@ public class Problem04 extends PApplet {
             if (circleY > horizontalY + (circleR / 2) + circleR * 14) {
                 circleY -= circleR;
             }
+            if (circleX == circleX2 && circleY == circleY2) {
+                circleX2 = horizontalX + (circleR / 2) + circleR * (int) random(1,19);
+                circleY2 = horizontalY + (circleR / 2) + circleR * (int) random(1,14);
+                noStroke();
+                fill(255, 255, 0);
+                circle(circleX2, circleY2, circleR);
+                ++score;
+            }
         }
 
+        fill(0,255,0);
+        text("Score: " + score, horizontalX + circleR * 9,height - height / 20f);
 
-        noStroke();
-        fill(255, 255, 0);
-        circle(circleX2, circleY2, circleR);
-
-
-        if (circleX == circleX2 && circleY == circleY2) {
-              circleX2 = circleX + circleR * rndX;
-              circleY2 = circleY + circleR * rndY;
-        }
-
-
-
-
+        fill (0, 255, 0);
+        text("Game: Collect Yellow Circles using Arrow Buttons", horizontalX + circleR * 2, height / 20f);
     }
 
     public static void main(String[] args) {
