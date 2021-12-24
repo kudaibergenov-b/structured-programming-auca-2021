@@ -60,26 +60,37 @@ public class Problem04 extends PApplet {
                     break;
                 case LEFT:
                     circleX -= circleR;
-                    if (circleX == horizontalX + (circleR / 2)) {
-                        circleX += circleR;
-                    }
                     break;
                 case RIGHT:
                     circleX += circleR;
-                    if (circleX == 20 * (horizontalX + (circleR / 2))) {
-                        circleX -= circleR;
-                    }
                     break;
+            }
+            if (circleX < horizontalX + (circleR / 2)) {
+                circleX += circleR;
+            }
+            if (circleX > horizontalX + (circleR / 2) + circleR * 19) {
+                circleX -= circleR;
+            }
+            if (circleY < horizontalY + (circleR / 2)) {
+                circleY += circleR;
+            }
+            if (circleY > horizontalY + (circleR / 2) + circleR * 14) {
+                circleY -= circleR;
             }
         }
 
-        //if (circleY == circleY || circleY == circleY + circleR * 15) {
-          //  circleY += 0;
-        //}
 
         noStroke();
         fill(255, 255, 0);
         circle(circleX2, circleY2, circleR);
+
+
+        if (circleX == circleX2 && circleY == circleY2) {
+              circleX2 = circleX + circleR * rndX;
+              circleY2 = circleY + circleR * rndY;
+        }
+
+
 
 
     }
